@@ -23,7 +23,8 @@ body {
 
 .mainArea {
     grid-area: mainArea;
-    /*border: 1px solid orange;*/
+    border: 1px solid orange;
+    padding: 15px;
     background: #ffedee;
     display: grid;
     grid-template-columns: 0.8fr 1fr;
@@ -125,7 +126,7 @@ input[type=submit] {
 
     .mainArea {
         grid-area: mainArea;
-        border: 1px solid orange;
+        /*border: 1px solid orange;*/
         padding: 8px;
         background: #ffedee;
         display: grid;

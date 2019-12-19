@@ -96,6 +96,24 @@ app.post('/getWeather', async (req, res, next) => {
 
     console.log("The time is: " + theTime);
 
+    var diff = (target - today)/1000;
+    //diff = Math.abs(Math.floor(diff));
+    diff = Math.floor(diff);
+
+    var days = Math.floor(diff/(24*60*60));
+
+    console.log("Date difference from target days is: " + days);
+
+    var daysToTrip = '';
+
+    if(days < 0) {
+        daysToTrip = Math.abs(days) + ' days ago';
+    } else if(days > 0) {
+        daysToTrip = Math.abs(days) + ' days away';
+    } else {
+        daysToTrip = 'today';
+    }
+
     // if(target > nextWeek) {
     //     console.log("Date supplied is greater than next week");
     // } else {
@@ -166,7 +184,8 @@ app.post('/getWeather', async (req, res, next) => {
                 theSummary: summary,
                 theLow: low,
                 theHigh: high,
-                theImage: imgURL
+                theImage: imgURL,
+                tripDays: daysToTrip
             }
 
             projectData.push(newEntry);

@@ -109,7 +109,13 @@ function handleSubmit(event) {
         theDepartingDate.textContent = departureDate;
 
         let theLocation = document.getElementById('departingLocation');
-        theLocation.textContent = formText
+        theLocation.textContent = formText;
+
+        let theMainLocation = document.getElementById('mainLocation');
+        theMainLocation.textContent = formText;
+
+        let theTimeSpan = document.getElementById('timeSpan');
+        theTimeSpan.textContent = newData[newData.length-1].tripDays;
 
         return newData;
 
