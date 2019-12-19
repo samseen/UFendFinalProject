@@ -1,0 +1,145 @@
+body {
+    font-family: Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    display: grid;
+    width: 80%;
+    margin: auto;
+    /*border: 1px solid purple;*/
+    grid-template-columns: 400px auto;
+    grid-template-rows: 10vh 60vh;
+    grid-template-areas: 
+    "titleHeader titleHeader"
+    "mainArea mainArea";
+
+    justify-content: center;
+}
+
+.titleHeader {
+    grid-area: titleHeader;
+    /*border: 1px solid blue;*/
+}
+
+.mainArea {
+    grid-area: mainArea;
+    /*border: 1px solid orange;*/
+    background: #ffedee;
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    grid-template-rows: 30vh 25vh;
+    column-gap: 10px;
+    row-gap: 1vh;
+    grid-template-areas: 
+    "cityImage cityInformation"
+    "formInformation formInformation";
+    
+}
+
+.cityImage {
+    grid-area: cityImage;
+    /*border: 1px solid red;*/
+}
+
+.cityInformation {
+    grid-area: cityInformation;
+    /*border: 1px solid green;*/
+}
+
+.formInformation {
+    grid-area: formInformation;
+    /*border: 3px solid blue;*/
+}
+
+/*.cityInput {
+    display: flex;
+
+}*/
+
+img#cityImg {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.text-bold {
+    font-weight: 900;
+    margin-top: 0px;
+}
+
+.buttonBox {
+    display: flex;
+    width: 40%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.saveTripButton {
+    background-color: white;
+    color: black;
+    height: 40px;
+    border: 2px solid #000;
+}
+
+.removeTripButton {
+    background-color: #ffedee;
+    color: black;
+    height: 40px;
+    border: 2px solid #fff;
+}
+
+.dataInput {
+    margin-bottom: 30px;
+}
+
+.inputStyle {
+    border-radius: 15px;
+    height: 25px;
+    border: solid 1px grey;
+    padding: 5px;
+}
+
+input[type=submit] {
+    background-color: fff;
+    border: 1px solid black;
+    color: black;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+@media only screen and (max-width: 900px) {
+    .container {
+        display: grid;
+        width: 80%;
+        margin: auto;
+        /*border: 1px solid purple;*/
+        /*grid-template-columns: 400px;*/
+        grid-template-rows: 10vh 50vh;
+        grid-template-areas: 
+        "titleHeader"
+        "mainArea";
+    
+        justify-content: center;
+    }
+
+    .mainArea {
+        grid-area: mainArea;
+        border: 1px solid orange;
+        padding: 8px;
+        background: #ffedee;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 20vh 30vh 20vh;
+        row-gap: 20px;
+        grid-template-areas: 
+        "cityImage"
+        "cityInformation"
+        "formInformation";
+    }
+
+    .cityImage {
+        grid-area: cityImage;
+        /*border: 1px solid red;*/
+    }
+}
