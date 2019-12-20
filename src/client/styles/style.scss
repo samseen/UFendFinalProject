@@ -6,9 +6,9 @@ body {
     display: grid;
     width: 80%;
     margin: auto;
-    /*border: 1px solid purple;*/
+    border: 1px solid purple;
     grid-template-columns: 400px auto;
-    grid-template-rows: 10vh 60vh;
+    /*grid-template-rows: 10vh 71vh;*/
     grid-template-areas: 
     "titleHeader titleHeader"
     "mainArea mainArea";
@@ -18,7 +18,7 @@ body {
 
 .titleHeader {
     grid-area: titleHeader;
-    /*border: 1px solid blue;*/
+    border: 1px solid blue;
 }
 
 .mainArea {
@@ -28,7 +28,7 @@ body {
     background: #ffedee;
     display: grid;
     grid-template-columns: 0.8fr 1fr;
-    grid-template-rows: 30vh 25vh;
+    grid-template-rows: 50vh 50vh;
     column-gap: 10px;
     row-gap: 1vh;
     grid-template-areas: 
@@ -39,17 +39,22 @@ body {
 
 .cityImage {
     grid-area: cityImage;
-    /*border: 1px solid red;*/
+    border: 1px solid red;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    width:100%;
 }
 
 .cityInformation {
     grid-area: cityInformation;
-    /*border: 1px solid green;*/
+    border: 1px solid green;
 }
 
 .formInformation {
     grid-area: formInformation;
-    /*border: 3px solid blue;*/
+    border: 3px solid blue;
 }
 
 /*.cityInput {
@@ -58,7 +63,7 @@ body {
 }*/
 
 img#cityImg {
-    max-width: 100%;
+    /*max-width: 100%;*/
     max-height: 100%;
 }
 
@@ -77,14 +82,14 @@ img#cityImg {
 .saveTripButton {
     background-color: white;
     color: black;
-    height: 40px;
+    height: 30px;
     border: 2px solid #000;
 }
 
 .removeTripButton {
     background-color: #ffedee;
     color: black;
-    height: 40px;
+    height: 30px;
     border: 2px solid #fff;
 }
 
@@ -114,9 +119,8 @@ input[type=submit] {
         display: grid;
         width: 80%;
         margin: auto;
-        /*border: 1px solid purple;*/
-        /*grid-template-columns: 400px;*/
-        grid-template-rows: 10vh 50vh;
+        border: 1px solid purple;
+        /*grid-template-rows: 10vh 200vh;*/
         grid-template-areas: 
         "titleHeader"
         "mainArea";
@@ -126,12 +130,13 @@ input[type=submit] {
 
     .mainArea {
         grid-area: mainArea;
-        /*border: 1px solid orange;*/
+        border: 1px solid orange;
         padding: 8px;
         background: #ffedee;
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 20vh 30vh 20vh;
+        /*grid-template-rows: 20vh 60vh 50vh;*/
+        grid-template-rows: 100px 350px 250px;
         row-gap: 20px;
         grid-template-areas: 
         "cityImage"
@@ -141,6 +146,24 @@ input[type=submit] {
 
     .cityImage {
         grid-area: cityImage;
-        /*border: 1px solid red;*/
+        border: 1px solid red;
+    }
+
+    .cityInformation {
+        grid-area: cityInformation;
+        border: 1px solid green;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .buttonBox {
+        display: flex;
+        width: 50%;
+    }
+
+    .buttonBox > button:hover {
+        cursor: pointer;
     }
 }

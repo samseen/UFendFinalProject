@@ -67,7 +67,7 @@ function handleSubmit(event) {
 
         // Call the server to get the weather data
 
-        const theReturnedWeatherData = postData('http://localhost:1234/getWeather', reqBody);
+        const theReturnedWeatherData = postData('http://localhost:8080/getWeather', reqBody);
     });
 
     /* Function to POST data */

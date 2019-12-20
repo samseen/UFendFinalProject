@@ -38,7 +38,7 @@ app.use((req, res, next) => {
 // Initialize the main project folder
 app.use(express.static('dist'));
 
-const port = 1234;
+const port = 8080;
 
 // Setup Server
 const server = app.listen(port, listening);
