@@ -114,6 +114,20 @@ input[type=submit] {
     cursor: pointer;
   }
 
+  #page-loader {
+    position: absolute;
+    top: 0;
+    bottom: 0%;
+    left: 0;
+    right: 0%;
+    background-color: white;
+    z-index: 99;
+    display: none;
+    text-align: center;
+    width: 100%;
+    padding-top: 25px;
+  }
+
 @media only screen and (max-width: 900px) {
     .container {
         display: grid;
