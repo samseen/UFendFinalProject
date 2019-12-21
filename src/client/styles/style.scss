@@ -6,9 +6,8 @@ body {
     display: grid;
     width: 80%;
     margin: auto;
-    border: 1px solid purple;
+    /*border: 1px solid purple;*/
     grid-template-columns: 400px auto;
-    /*grid-template-rows: 10vh 71vh;*/
     grid-template-areas: 
     "titleHeader titleHeader"
     "mainArea mainArea";
@@ -18,12 +17,12 @@ body {
 
 .titleHeader {
     grid-area: titleHeader;
-    border: 1px solid blue;
+    /*border: 1px solid blue;*/
 }
 
 .mainArea {
     grid-area: mainArea;
-    border: 1px solid orange;
+    /*border: 1px solid orange;*/
     padding: 15px;
     background: #ffedee;
     display: grid;
@@ -39,7 +38,7 @@ body {
 
 .cityImage {
     grid-area: cityImage;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     display: flex;
     justify-content:center;
     align-items:center;
@@ -49,12 +48,12 @@ body {
 
 .cityInformation {
     grid-area: cityInformation;
-    border: 1px solid green;
+    /*border: 1px solid green;*/
 }
 
 .formInformation {
     grid-area: formInformation;
-    border: 3px solid blue;
+    /*border: 3px solid blue;*/
 }
 
 /*.cityInput {
@@ -123,8 +122,7 @@ input[type=submit] {
         display: grid;
         width: 80%;
         margin: auto;
-        border: 1px solid purple;
-        /*grid-template-rows: 10vh 200vh;*/
+        /*border: 1px solid purple;*/
         grid-template-areas: 
         "titleHeader"
         "mainArea";
@@ -134,7 +132,7 @@ input[type=submit] {
 
     .mainArea {
         grid-area: mainArea;
-        border: 1px solid orange;
+        /*border: 1px solid orange;*/
         padding: 8px;
         background: #ffedee;
         display: grid;
@@ -150,12 +148,12 @@ input[type=submit] {
 
     .cityImage {
         grid-area: cityImage;
-        border: 1px solid red;
+        /*border: 1px solid red;*/
     }
 
     .cityInformation {
         grid-area: cityInformation;
-        border: 1px solid green;
+        /*border: 1px solid green;*/
         display: flex;
         flex-direction: column;
         align-items: center;
