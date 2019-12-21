@@ -8,8 +8,6 @@ import Beachpalm from './media/Beachpalm.png';
 let cityImage = document.getElementById('cityImg');
 cityImage.src = Beachpalm;
 
-// console.log("Beachpalm url is: " + Beachpalm)
-
 export {
     handleSubmit
 }

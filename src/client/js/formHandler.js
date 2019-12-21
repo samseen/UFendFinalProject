@@ -9,6 +9,9 @@ function handleSubmit(event) {
     } else {
       console.log("::: Form has been Submitted :::");
 
+      const loaderIcon = document.getElementById("loader");
+      loaderIcon.style.display = 'block';
+
       let baseURL = 'http://api.geonames.org/searchJSON?style=full&maxRows=12&name_startsWith=';
       let location = formText;
       let theDepartureDate = departureDate;
@@ -54,6 +57,8 @@ function handleSubmit(event) {
           // Call the server to get the weather data
 
           const theReturnedWeatherData = postData('http://localhost:8080/getWeather', reqBody);
+      }).then(function(mainResponse){
+        loaderIcon.style.display = '';
       });
 
       /* Function to POST data */
@@ -110,9 +115,8 @@ function handleSubmit(event) {
           // handle error
         }
       }
-    
-  }
     }
+  }
     //Client.checkForName(formText)
 
     
