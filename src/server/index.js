@@ -1,5 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = [];
+const projectData = [];
 const travelPlanner = {};
 
 // Require Express to run server and routes
@@ -54,6 +54,10 @@ function listening(){
 //     date.setDate(date.getDate() + days);
 //     return date;
 // }
+
+app.get('/user', function(req, res) {
+    res.status(200).json({ name: 'john' });
+  });
 
 app.post('/getWeather', async (req, res, next) => {
     const travelPlanner = [];
@@ -200,3 +204,5 @@ app.post('/getWeather', async (req, res, next) => {
         // appropriately handle the error
     }
 })
+
+module.exports = app;
