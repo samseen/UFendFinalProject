@@ -8,4 +8,7 @@ The project includes a simple form where you enter the location you are travelin
 
 The APIs I consumed from include Pixabay, Dark Sky and Geonames.
 
+## Extend your Project Further - Roadmap/Strategy
+I added the end date and displayed the length of the trip.
+
 I extended my project further by pulling the images of the location entered from Pixabay and displayed the one with the most hits from that country.
