@@ -70,22 +70,33 @@ app.post('/getWeather', async (req, res, next) => {
     let longitude = req.body.lng;
     let location = req.body.location;
     let departureDate = req.body.date;
+    let endDate = req.body.endDate;
     console.log("Departure Date is: " + departureDate);
     var dateLiterals = departureDate.split("/");
+    var dateLiterals2 = endDate.split("/");
     
     let year = dateLiterals[2];
     let month = dateLiterals[0];
     let day = dateLiterals[1];
+    
+    let endYear = dateLiterals2[2];
+    let endMonth = dateLiterals2[0];
+    let endDay = dateLiterals2[1];
 
     //Convert month to number and subtract one
     let monthInNum = parseInt(month);
     let properMonth = monthInNum - 1;
 
-    console.log("Year: " + year);
-    console.log("Month: " + properMonth);
-    console.log("Day: " + day);
+    let endMonthInNum = parseInt(endMonth);
+    let endProperMonth = endMonthInNum - 1;
+
+    // console.log("Year: " + year);
+    // console.log("Month: " + properMonth);
+    // console.log("Day: " + day);
 
     var target = new Date(year, properMonth, day);
+
+    var tripFinalDate = new Date(endYear, endProperMonth, endDay);
 
     var today = new Date();
 
@@ -93,12 +104,12 @@ app.post('/getWeather', async (req, res, next) => {
     
     nextWeek.setDate(today.getDate()+7);
 
-    console.log("Today is: " + today);
-    console.log("Next week is: " + nextWeek);
-    console.log("Target is: " + target);
+    // console.log("Today is: " + today);
+    // console.log("Next week is: " + nextWeek);
+    // console.log("Target is: " + target);
     let theTime = year+'-'+monthInNum+'-'+day;
 
-    console.log("The time is: " + theTime);
+    // console.log("The time is: " + theTime);
 
     var diff = (target - today)/1000;
     //diff = Math.abs(Math.floor(diff));
@@ -118,6 +129,15 @@ app.post('/getWeather', async (req, res, next) => {
         daysToTrip = 'today';
     }
 
+    console.log("Trip Final Date: " + tripFinalDate);
+    console.log("Target Date: " + target);
+
+    // I got the trip length by subtracting the date of the first trip from the date of the
+    // final trip departure
+    const tripDifference = Math.abs(tripFinalDate - target);
+    const tripDifferenceDays = Math.ceil(tripDifference / (1000 * 60 * 60 * 24)); 
+
+    console.log("Trip difference in server console is: " + tripDifferenceDays);
     // if(target > nextWeek) {
     //     console.log("Date supplied is greater than next week");
     // } else {
@@ -125,7 +145,7 @@ app.post('/getWeather', async (req, res, next) => {
     // }
 
     let apiKey = `${process.env.DARK_SKY_API_KEY}`
-    console.log("DarkSky API Key in env is: " + apiKey);
+    //console.log("DarkSky API Key in env is: " + apiKey);
     
     let proxy = 'https://cors-anywhere.herokuapp.com/';
     // let theAppURL = 'https://api.darksky.net/forecast/'+apiKey+'/'+latitude+','+longitude+'?exclude=currently,flags';
@@ -189,7 +209,8 @@ app.post('/getWeather', async (req, res, next) => {
                 theLow: low,
                 theHigh: high,
                 theImage: imgURL,
-                tripDays: daysToTrip
+                tripDays: daysToTrip,
+                mainTripDifference: tripDifferenceDays
             }
 
             projectData.push(newEntry);

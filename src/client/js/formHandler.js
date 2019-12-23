@@ -4,6 +4,8 @@ function handleSubmit(event) {
     // check what text was put into the form field
     let formText = document.getElementById('place').value;
     let departureDate = document.getElementById('date').value;
+    let theFinalTripDate = document.getElementById('endDate').value;
+
     if ((formText === "") | (departureDate === "")) {
       alert("Fill the Location or Date appropriately");
     } else {
@@ -51,7 +53,8 @@ function handleSubmit(event) {
               lat: latitude,
               lng: longitude,
               location: formText,
-              date: departureDate
+              date: departureDate,
+              endDate: theFinalTripDate
           }
 
           // Call the server to get the weather data
@@ -107,6 +110,12 @@ function handleSubmit(event) {
 
           let theTimeSpan = document.getElementById('timeSpan');
           theTimeSpan.textContent = newData[newData.length-1].tripDays;
+
+          let tripLengthDuration = document.getElementById('tripLength');
+          tripLengthDuration.textContent = newData[newData.length-1].mainTripDifference + " Days";
+
+          //console.log("Trip Difference: " + newData[newData.length-1].mainTripDifference);
+          //document.getElementById(tripLength).style.display = 'none';
 
           return newData;
 
